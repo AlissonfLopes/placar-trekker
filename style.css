@@ -1,0 +1,228 @@
+body {
+  background: url("../images/fundo.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  background-color: rgba(3, 64, 120, 0.9);
+  border-radius: 0 0 20px 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+header img {
+  height: 120px;
+}
+
+header h1 {
+  color: white;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.category-selector {
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  background-color: white;
+  padding: 4px 10px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.category-selector label,
+.category-selector select {
+  font-size: 1.3rem;
+  padding: 3px 6px;
+}
+
+.animation {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #034078;
+  color: white;
+  font-size: 1.5rem;
+  padding: 5px 0;
+  border-radius: 0 0 12px 12px;
+}
+
+.animation div {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  overflow-x: auto;
+}
+
+table {
+  width: 90%;
+  max-width: 1800px;
+  min-width: 600px;
+  background-color: rgba(249, 250, 251, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #059669;
+  color: white;
+}
+
+th, td {
+  padding: 16px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+tbody tr:hover {
+  background-color: #e2e8f0;
+  transition: background-color 0.3s;
+}
+
+.top1 {
+  border: 4px solid gold;
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.top2 {
+  border: 4px solid silver;
+  background-color: rgba(192, 192, 192, 0.1);
+}
+
+.top3 {
+  border: 4px solid #cd7f32;
+  background-color: rgba(205, 127, 50, 0.1);
+}
+
+footer {
+  background-color: #034078;
+  color: white;
+  text-align: center;
+  padding: 6px;
+  font-size: 1.1rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  border-radius: 20px 20px 0 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔥 Responsividade */
+
+/* Para telas menores que 1024px (Tablet) */
+@media (max-width: 1024px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header img {
+    height: 100px;
+  }
+
+  .category-selector {
+    top: 150px;
+    left: 10px;
+    padding: 4px 8px;
+  }
+
+  th, td {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Para telas menores que 768px (Celular grande e tablet em pé) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header img {
+    height: 80px;
+  }
+
+  .category-selector {
+    position: static;
+    margin: 10px auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .animation {
+    font-size: 1.2rem;
+  }
+
+  table {
+    min-width: 100%;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+/* Para telas menores que 480px (Celular pequeno) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header img {
+    height: 60px;
+  }
+
+  .animation {
+    font-size: 1rem;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .category-selector {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
