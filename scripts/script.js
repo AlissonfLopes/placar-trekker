@@ -37,21 +37,25 @@ function fetchData(sheetName) {
         const puxada1 = r[1];
         const puxada2 = r[2];
         const puxada3 = r[3];
-
-        // Normalizar puxadas 2 e 3 (puxada1 não conta)
+        
+        // Normalizar puxadas
         const nPuxada2 = normalizaPuxada(puxada2);
         const nPuxada3 = normalizaPuxada(puxada3);
-
-        // Cálculo do score (desconsiderando puxada1)
-        const validos = [nPuxada2, nPuxada3].filter(n => n >= 0);
-        const score = validos.length ? Math.max(...validos) : -1;
-
-        return { 
-          nome: r[0], 
-          puxada1, 
-          puxada2, 
-          puxada3, 
-          score 
+        
+        // Score principal pela Puxada 2
+        let score = nPuxada2;
+        
+        // Se houve empate em Full Pull na puxada 2, usar puxada 3 como desempate
+        if (nPuxada2 === 100) {
+          score += nPuxada3 / 1000; // Pequeno desempate com puxada 3
+        }
+        
+        return {
+          nome: r[0],
+          puxada1,
+          puxada2,
+          puxada3,
+          score
         };
       });
 
