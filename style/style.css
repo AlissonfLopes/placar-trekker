@@ -40,7 +40,7 @@ header h1 {
   background-color: white;
   padding: 4px 10px;
   border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
 .category-selector label,
@@ -67,8 +67,12 @@ header h1 {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 main {
@@ -82,7 +86,6 @@ main {
 table {
   width: 90%;
   max-width: 1800px;
-  min-width: 600px;
   background-color: rgba(249, 250, 251, 0.95);
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
@@ -94,7 +97,8 @@ thead {
   color: white;
 }
 
-th, td {
+th,
+td {
   padding: 16px;
   text-align: center;
   font-size: 1.2rem;
@@ -147,7 +151,7 @@ footer img {
 
 /* 🔥 Responsividade */
 
-/* Para telas menores que 1024px (Tablet) */
+/* Telas menores que 1024px */
 @media (max-width: 1024px) {
   header h1 {
     font-size: 2.2rem;
@@ -163,14 +167,23 @@ footer img {
     padding: 4px 8px;
   }
 
-  th, td {
+  th,
+  td {
     padding: 12px;
     font-size: 1.1rem;
   }
 }
 
-/* Para telas menores que 768px (Celular grande e tablet em pé) */
+/* Telas menores que 768px */
 @media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  .header-content {
+    gap: 30px;
+  }
+
   header h1 {
     font-size: 1.8rem;
   }
@@ -193,17 +206,32 @@ footer img {
   }
 
   table {
-    min-width: 100%;
+    width: 100%;
   }
 
-  th, td {
+  th,
+  td {
     padding: 10px;
     font-size: 1rem;
   }
+
+  footer {
+    height: 40px;
+    font-size: 0.9rem;
+    padding: 4px;
+  }
 }
 
-/* Para telas menores que 480px (Celular pequeno) */
+/* Telas menores que 480px */
 @media (max-width: 480px) {
+  header {
+    padding: 6px;
+  }
+
+  .header-content {
+    gap: 20px;
+  }
+
   header h1 {
     font-size: 1.4rem;
   }
@@ -216,7 +244,8 @@ footer img {
     font-size: 1rem;
   }
 
-  th, td {
+  th,
+  td {
     padding: 8px;
     font-size: 0.9rem;
   }
@@ -224,5 +253,11 @@ footer img {
   .category-selector {
     flex-direction: column;
     gap: 4px;
+  }
+
+  footer {
+    height: 35px;
+    font-size: 0.8rem;
+    padding: 2px;
   }
 }
