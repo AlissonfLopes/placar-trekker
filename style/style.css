@@ -89,11 +89,14 @@ main {
 table {
   width: 95%;
   max-width: 1800px;
-  min-width: 600px; /* Garante que a tabela não fique muito espremida */
+  min-width: 600px;
   background-color: rgba(249, 250, 251, 0.95);
-  border-radius: 1.25rem; /* 20px / 16px */
+  border-radius: 1.25rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  border-collapse: collapse;
+  /* Ajustes para o arredondamento */
+  border-collapse: separate; 
+  border-spacing: 0;
+  overflow: hidden;
 }
 
 thead {
