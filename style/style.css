@@ -1,3 +1,4 @@
+/* style.css */
 body {
   background: url("../images/fundo.jpeg") no-repeat center center fixed;
   background-size: cover;
@@ -5,48 +6,54 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 16px; /* Base font size */
 }
 
 header {
   text-align: center;
-  padding: 20px;
-  position: relative;
+  padding: 1.25rem; /* 20px / 16px */
   background-color: rgba(3, 64, 120, 0.9);
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 1.25rem 1.25rem; /* 20px / 16px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* 16px */
 }
 
 .header-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 2rem; /* 32px */
   flex-wrap: wrap;
+  width: 100%;
 }
 
 header img {
-  height: 120px;
+  height: 7.5rem; /* 120px / 16px */
 }
 
 header h1 {
   color: white;
-  font-size: 2.8rem;
+  font-size: 2.5rem; /* 40px / 16px */
   text-align: center;
+  margin: 0;
 }
 
 .category-selector {
-  position: absolute;
-  top: 200px;
-  left: 20px;
   background-color: white;
-  padding: 4px 10px;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 1rem; /* 8px 16px */
+  border-radius: 0.625rem; /* 10px / 16px */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
 }
 
 .category-selector label,
 .category-selector select {
-  font-size: 1.3rem;
-  padding: 3px 6px;
+  font-size: 1.125rem; /* 18px / 16px */
+  padding: 0.25rem 0.5rem; /* 4px 8px */
 }
 
 .animation {
@@ -55,9 +62,9 @@ header h1 {
   white-space: nowrap;
   background-color: #034078;
   color: white;
-  font-size: 1.5rem;
-  padding: 5px 0;
-  border-radius: 0 0 12px 12px;
+  font-size: 1.25rem; /* 20px / 16px */
+  padding: 0.3125rem 0; /* 5px / 16px */
+  border-radius: 0 0 0.75rem 0.75rem; /* 12px / 16px */
 }
 
 .animation div {
@@ -67,27 +74,24 @@ header h1 {
 }
 
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }
 
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
-  overflow-x: auto;
+  align-items: flex-start; /* Alinha a tabela no topo */
+  padding: 1.875rem; /* 30px / 16px */
+  overflow-x: auto; /* Permite rolagem horizontal se a tabela for muito larga */
 }
 
 table {
-  width: 90%;
+  width: 95%;
   max-width: 1800px;
+  min-width: 600px; /* Garante que a tabela não fique muito espremida */
   background-color: rgba(249, 250, 251, 0.95);
-  border-radius: 20px;
+  border-radius: 1.25rem; /* 20px / 16px */
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   border-collapse: collapse;
 }
@@ -97,11 +101,10 @@ thead {
   color: white;
 }
 
-th,
-td {
-  padding: 16px;
+th, td {
+  padding: 1rem; /* 16px / 16px */
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* 17.6px / 16px */
 }
 
 tbody tr:nth-child(even) {
@@ -132,132 +135,75 @@ footer {
   background-color: #034078;
   color: white;
   text-align: center;
-  padding: 6px;
-  font-size: 1.1rem;
+  padding: 0.375rem; /* 6px / 16px */
+  font-size: 1rem; /* 16px / 16px */
   position: fixed;
   width: 100%;
   bottom: 0;
-  border-radius: 20px 20px 0 0;
-  height: 50px;
+  height: 3.125rem; /* 50px / 16px */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-footer img {
-  height: 100%;
-  object-fit: cover;
-}
-
 /* 🔥 Responsividade */
 
-/* Telas menores que 1024px */
+/* Para telas menores que 1024px (Tablet) */
 @media (max-width: 1024px) {
   header h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   header img {
-    height: 100px;
+    height: 6.25rem; /* 100px / 16px */
   }
 
-  .category-selector {
-    top: 150px;
-    left: 10px;
-    padding: 4px 8px;
-  }
-
-  th,
-  td {
-    padding: 12px;
-    font-size: 1.1rem;
+  th, td {
+    padding: 0.75rem; /* 12px / 16px */
+    font-size: 1rem;
   }
 }
 
-/* Telas menores que 768px */
+/* Para telas menores que 768px (Celular grande e tablet em pé) */
 @media (max-width: 768px) {
   header {
-    padding: 10px;
+    padding: 1rem;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header img {
+    height: 5rem; /* 80px / 16px */
   }
 
   .header-content {
-    gap: 30px;
+      flex-direction: column;
+      gap: 1rem;
   }
-
-  header h1 {
-    font-size: 1.8rem;
-  }
-
-  header img {
-    height: 80px;
-  }
-
+  
   .category-selector {
-    position: static;
-    margin: 10px auto 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
   }
 
   .animation {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+  
+  main {
+      padding: 1rem;
   }
 
   table {
+    min-width: 100%; /* Força a tabela a ocupar a largura total, ativando a rolagem */
     width: 100%;
   }
 
-  th,
-  td {
-    padding: 10px;
-    font-size: 1rem;
-  }
-
-  footer {
-    height: 40px;
+  th, td {
+    padding: 0.625rem; /* 10px / 16px */
     font-size: 0.9rem;
-    padding: 4px;
-  }
-}
-
-/* Telas menores que 480px */
-@media (max-width: 480px) {
-  header {
-    padding: 6px;
-  }
-
-  .header-content {
-    gap: 20px;
-  }
-
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  header img {
-    height: 60px;
-  }
-
-  .animation {
-    font-size: 1rem;
-  }
-
-  th,
-  td {
-    padding: 8px;
-    font-size: 0.9rem;
-  }
-
-  .category-selector {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  footer {
-    height: 35px;
-    font-size: 0.8rem;
-    padding: 2px;
   }
 }
