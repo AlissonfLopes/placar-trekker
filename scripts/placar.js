@@ -1,4 +1,4 @@
-const sheetID = "1mvsl0G1BpcroK-AvZSPBrjGb2XpWO1L8eGR_llfg5Qk";
+const sheetID = "1gjZbkB4zVk9CZbZqV7T5N9XJeCRcxgHT9NNO5OmG7M4";
 const sheetName = "Agrícola 2500"; // <- Pode trocar para qualquer categoria fixa
 
 const placarBody = document.querySelector('#placar');
